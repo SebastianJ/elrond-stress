@@ -1,7 +1,10 @@
 package commands
 
 import (
+	"os"
+	"os/signal"
 	"path/filepath"
+	"syscall"
 
 	"github.com/SebastianJ/elrond-stress/config"
 	cmdConfig "github.com/SebastianJ/elrond-stress/config/cmd"
@@ -32,6 +35,8 @@ func init() {
 }
 
 func sendTransactions(cmd *cobra.Command) error {
+	handleShutdown()
+
 	basePath, err := filepath.Abs(cmdConfig.Persistent.Path)
 	if err != nil {
 		return err
@@ -41,9 +46,16 @@ func sendTransactions(cmd *cobra.Command) error {
 		return err
 	}
 
-	if err := transactions.SendTransactions(); err != nil {
-		return err
-	}
+	transactions.SendTransactions()
 
 	return nil
+}
+
+func handleShutdown() {
+	sigs := make(chan os.Signal)
+	signal.Notify(sigs, os.Interrupt, syscall.SIGTERM)
+	go func() {
+		<-sigs
+		os.Exit(0)
+	}()
 }

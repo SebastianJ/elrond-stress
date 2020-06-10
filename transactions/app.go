@@ -12,20 +12,22 @@ import (
 	"github.com/SebastianJ/elrond-stress/utils"
 )
 
-func SendTransactions() error {
-	var walletWaitGroup sync.WaitGroup
+// SendTransactions - sends transactions for a given amount of wallets/importer .pem certs
+func SendTransactions() {
+	for {
+		var walletWaitGroup sync.WaitGroup
 
-	for _, wallet := range config.Configuration.Transactions.Wallets {
-		walletWaitGroup.Add(1)
-		go SendTransactionFor(wallet, &walletWaitGroup)
+		for _, wallet := range config.Configuration.Transactions.Wallets {
+			walletWaitGroup.Add(1)
+			go SendTransactionsFor(wallet, &walletWaitGroup)
+		}
+
+		walletWaitGroup.Wait()
 	}
-
-	walletWaitGroup.Wait()
-
-	return nil
 }
 
-func SendTransactionFor(wallet sdkWallet.Wallet, walletWaitGroup *sync.WaitGroup) error {
+// SendTransactionsFor - sends transactions for a given wallet
+func SendTransactionsFor(wallet sdkWallet.Wallet, walletWaitGroup *sync.WaitGroup) error {
 	defer walletWaitGroup.Done()
 	var receiverWaitGroup sync.WaitGroup
 
@@ -43,7 +45,7 @@ func SendTransactionFor(wallet sdkWallet.Wallet, walletWaitGroup *sync.WaitGroup
 	}
 	nonce := int64(account.Nonce)
 
-	// Make a copy of the default gas params that can be modified when processing the tx
+	// Make a copy of the default gas params that can be mutated when processing the tx
 	gasParams := config.Configuration.Transactions.GasParams
 
 	for i := 0; i < config.Configuration.Concurrency; i++ {
@@ -58,6 +60,7 @@ func SendTransactionFor(wallet sdkWallet.Wallet, walletWaitGroup *sync.WaitGroup
 	return nil
 }
 
+// SendTransactionToReceiver - sends a given transaction to a specific receiver
 func SendTransactionToReceiver(wallet sdkWallet.Wallet, receiver string, nonce int64, gasParams sdkTxs.GasParams, client sdkAPI.Client, receiverWaitGroup *sync.WaitGroup) (string, error) {
 	defer receiverWaitGroup.Done()
 
@@ -77,7 +80,7 @@ func SendTransactionToReceiver(wallet sdkWallet.Wallet, receiver string, nonce i
 		return "", err
 	}
 
-	fmt.Println(fmt.Sprintf("Success! Your pending transaction hash is: %s", txHash))
+	fmt.Println(fmt.Sprintf("Success! Pending tx hash: %s", txHash))
 
 	return txHash, nil
 }
