@@ -43,10 +43,12 @@ func SendTransactionFor(wallet sdkWallet.Wallet, walletWaitGroup *sync.WaitGroup
 	}
 	nonce := int64(account.Nonce)
 
+	receiver := utils.RandomElementFromSlice(config.Configuration.Transactions.Receivers)
+
 	// Make a copy of the default gas params that can be modified when processing the tx
 	gasParams := config.Configuration.Transactions.GasParams
 
-	for _, receiver := range config.Configuration.Transactions.Receivers {
+	for i := 0; i < config.Configuration.Concurrency; i++ {
 		receiverWaitGroup.Add(1)
 		go SendTransactionToReceiver(wallet, receiver, nonce, gasParams, client, &receiverWaitGroup)
 		nonce++
@@ -60,7 +62,7 @@ func SendTransactionFor(wallet sdkWallet.Wallet, walletWaitGroup *sync.WaitGroup
 func SendTransactionToReceiver(wallet sdkWallet.Wallet, receiver string, nonce int64, gasParams sdkTxs.GasParams, client sdkAPI.Client, receiverWaitGroup *sync.WaitGroup) (string, error) {
 	defer receiverWaitGroup.Done()
 
-	fmt.Printf("Receiver: %s\n", receiver)
+	fmt.Printf("Sending tx from: %s, to: %s, nonce: %d\n", wallet.Address, receiver, nonce)
 
 	txHash, err := sdkTxs.SendTransaction(
 		wallet,

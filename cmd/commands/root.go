@@ -30,6 +30,7 @@ func init() {
 	cmdConfig.Persistent = cmdConfig.PersistentFlags{}
 	RootCmd.PersistentFlags().StringVar(&cmdConfig.Persistent.Path, "path", ".", "Base path for resolving files etc")
 	RootCmd.PersistentFlags().StringSliceVar(&cmdConfig.Persistent.Endpoints, "endpoint", []string{"https://wallet-api.elrond.com"}, "Which API endpoint to use for API commands")
+	RootCmd.PersistentFlags().IntVar(&cmdConfig.Persistent.Concurrency, "concurrency", 100, "How many concurrent operations to run")
 }
 
 // Execute starts the actual app

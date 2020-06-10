@@ -13,6 +13,7 @@ import (
 func Configure(basePath string) (err error) {
 	Configuration.BasePath = basePath
 	Configuration.Endpoints = cmd.Persistent.Endpoints
+	Configuration.Concurrency = cmd.Persistent.Concurrency
 
 	if err := configureReceivers(); err != nil {
 		return err
