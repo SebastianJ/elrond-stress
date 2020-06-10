@@ -7,7 +7,6 @@ require (
 	github.com/allegro/bigcache v1.2.1 // indirect
 	github.com/aristanetworks/goarista v0.0.0-20191023202215-f096da5361bb // indirect
 	github.com/cespare/cp v1.1.1 // indirect
-	github.com/davecgh/go-spew v1.1.1
 	github.com/deckarep/golang-set v1.7.1 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/pborman/uuid v1.2.0 // indirect
