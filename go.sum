@@ -25,6 +25,8 @@ github.com/ElrondNetwork/concurrent-map v0.1.2 h1:mr2sVF2IPDsJO8DNGzCUiNQOJcadHu
 github.com/ElrondNetwork/concurrent-map v0.1.2/go.mod h1:3XwSwn4JHI0lrKxWLZvtp53Emr8BXYTmNQGwcukHJEE=
 github.com/ElrondNetwork/elrond-go v1.0.128 h1:zk50inbfhoKqrGRYwJBhIufgx5C2KN5JsJDJmlZc4wE=
 github.com/ElrondNetwork/elrond-go v1.0.128/go.mod h1:HT7Mlsg8G3ZB8Y0jy1fuq09/wK8TaQfqqIhK46hoMu4=
+github.com/ElrondNetwork/elrond-go v1.0.130 h1:8DF4hPsBFOxPz/A4CMEa8gjU9EmFABp9Vzuun+hQH+s=
+github.com/ElrondNetwork/elrond-go v1.0.130/go.mod h1:HT7Mlsg8G3ZB8Y0jy1fuq09/wK8TaQfqqIhK46hoMu4=
 github.com/ElrondNetwork/elrond-go-logger v1.0.2/go.mod h1:e5D+c97lKUfFdAzFX7rrI2Igl/z4Y0RkKYKWyzprTGk=
 github.com/ElrondNetwork/elrond-go-logger v1.0.3 h1:PHH6m0vhgBbChd8Cu3Oda5LS1FtPcQRQw8DGM5osZ3Y=
 github.com/ElrondNetwork/elrond-go-logger v1.0.3/go.mod h1:e5D+c97lKUfFdAzFX7rrI2Igl/z4Y0RkKYKWyzprTGk=
@@ -37,8 +39,8 @@ github.com/ElrondNetwork/elrond-vm-util v0.1.1/go.mod h1:02LPKFh/Z5rbejgW2dazwjW
 github.com/ElrondNetwork/elrond-vm-util v0.2.6/go.mod h1:tLiuKpnQB5IrcMtZvwAJqo2WwUMzXX024SsEsTlmNL4=
 github.com/Kubuxu/go-os-helper v0.0.1/go.mod h1:N8B+I7vPCT80IcP58r50u4+gEEcsZETFUpAzWW2ep1Y=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
-github.com/SebastianJ/elrond-sdk v0.0.0-20200610180621-c3251cf14c8f h1:LjEThczzVxY8qOv5cBJRpGE2zHIt3dXrGk9eXbYLjBA=
-github.com/SebastianJ/elrond-sdk v0.0.0-20200610180621-c3251cf14c8f/go.mod h1:MW8qU3R/a8GypAMD8Q2H5K3LydmCGb5PqByQI2iWHLI=
+github.com/SebastianJ/elrond-sdk v0.0.0-20200612125752-f8f7cd2a99c7 h1:kjOA8UMu1KhW2XiQWr/U69JOCvP7awA+OY/eA9GPJHI=
+github.com/SebastianJ/elrond-sdk v0.0.0-20200612125752-f8f7cd2a99c7/go.mod h1:s9MPDNIuT9lQOHFN7qNBm/WHl35iltFJ3KJa4pS44Ik=
 github.com/Shopify/sarama v1.23.1/go.mod h1:XLH1GYJnLVE0XCr6KdJGVJRTwY30moWNJ4sERjXX6fs=
 github.com/Shopify/toxiproxy v2.1.4+incompatible/go.mod h1:OXgGpZ6Cli1/URJOF1DMxUHB2q5Ap20/P/eIdh4G0pI=
 github.com/StackExchange/wmi v0.0.0-20170410192909-ea383cf3ba6e/go.mod h1:3eOhrUMpNV+6aFIbp5/iudMxNCF27Vw2OZgy4xEx0Fg=
@@ -203,6 +205,7 @@ github.com/hashicorp/golang-lru v0.5.1/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ
 github.com/hashicorp/golang-lru v0.5.4 h1:YDjusn29QI/Das2iO9M0BHnIbxPeyuCHsjMW+lJfyTc=
 github.com/hashicorp/golang-lru v0.5.4/go.mod h1:iADmTwqILo4mZ8BN3D2Q6+9jd8WM5uGBxy+E8yxSoD4=
 github.com/hashicorp/hcl v1.0.0/go.mod h1:E5yfLk+7swimpb2L/Alb/PJmXilQ/rhwaUYs4T20WEQ=
+github.com/herumi/bls-go-binary v0.0.0-20200324054641-17de9ae04665 h1:JjL0D1N5aUwjgJKOxqGtDGf2q5m4PgVtlxjwZeYSVlA=
 github.com/herumi/bls-go-binary v0.0.0-20200324054641-17de9ae04665/go.mod h1:O4Vp1AfR4raRGwFeQpr9X/PQtncEicMoOe6BQt1oX0Y=
 github.com/hpcloud/tail v1.0.0 h1:nfCOvKYfkgYP8hkirhJocXT2+zOD8yUNjXaWfTlyFKI=
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=

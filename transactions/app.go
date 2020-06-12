@@ -64,7 +64,7 @@ func SendTransactionsFor(wallet sdkWallet.Wallet, walletWaitGroup *sync.WaitGrou
 func SendTransactionToReceiver(wallet sdkWallet.Wallet, receiver string, nonce int64, gasParams sdkTxs.GasParams, client sdkAPI.Client, receiverWaitGroup *sync.WaitGroup) (string, error) {
 	defer receiverWaitGroup.Done()
 
-	fmt.Printf("Sending tx from: %s, to: %s, nonce: %d\n", wallet.Address, receiver, nonce)
+	fmt.Printf("Sending tx from: %s, to: %s, nonce: %d, gas price: %d\n", wallet.Address, receiver, nonce, gasParams.GasLimit)
 
 	txHash, err := sdkTxs.SendTransaction(
 		wallet,

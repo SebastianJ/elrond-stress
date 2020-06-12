@@ -9,6 +9,7 @@ type TxFlags struct {
 	ReceiversPath        string
 	Amount               float64
 	Nonce                int64
+	GasLimit             int64
 	DataPath             string
 	ConfigPath           string
 	ForceAPINonceLookups bool

@@ -27,6 +27,7 @@ func init() {
 	cmdTx.Flags().StringVar(&cmdConfig.Tx.ReceiversPath, "receivers", "./data/receivers.txt", "Path to receivers file")
 	cmdTx.Flags().Float64Var(&cmdConfig.Tx.Amount, "amount", 0.0, "How many tokens to send")
 	cmdTx.Flags().Int64Var(&cmdConfig.Tx.Nonce, "nonce", -1, "What nonce to use for sending the transaction")
+	cmdTx.Flags().Int64Var(&cmdConfig.Tx.GasLimit, "gas-limit", -1, "What gas limit to use for sending the transaction")
 	cmdTx.Flags().StringVar(&cmdConfig.Tx.DataPath, "data", "./data/data.txt", "File containing data to use for sending transactions")
 	cmdTx.Flags().StringVar(&cmdConfig.Tx.ConfigPath, "config", "./configs/economics.toml", "The economics configuration file to load")
 	cmdTx.Flags().BoolVar(&cmdConfig.Tx.ForceAPINonceLookups, "force-api-nonce-lookups", true, "Force the usage of https://wallet-api.elrond.com for checking nonces when using local node endpoints")

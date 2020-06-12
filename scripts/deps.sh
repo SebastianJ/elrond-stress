@@ -3,8 +3,8 @@
 echo "Updating dependencies"
 
 deps=(
-ElrondNetwork/elrond-go
 SebastianJ/elrond-sdk
+ElrondNetwork/elrond-go
 )
 
 for dep in "${deps[@]}"; do

@@ -76,6 +76,10 @@ func configureGasParams() error {
 
 	Configuration.Transactions.GasParams = defaultGasParams
 
+	if cmd.Tx.GasLimit != -1 {
+		Configuration.Transactions.GasParams.GasLimit = uint64(cmd.Tx.GasLimit)
+	}
+
 	return nil
 }
 
