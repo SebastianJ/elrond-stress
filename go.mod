@@ -4,7 +4,7 @@ go 1.14
 
 require (
 	github.com/ElrondNetwork/elrond-go v1.0.131 // indirect
-	github.com/SebastianJ/elrond-sdk v0.0.0-20200615164400-585c10f4b0f4
+	github.com/SebastianJ/elrond-sdk v0.0.0-20200615175231-69f444a8e428
 	github.com/allegro/bigcache v1.2.1 // indirect
 	github.com/aristanetworks/goarista v0.0.0-20191023202215-f096da5361bb // indirect
 	github.com/cespare/cp v1.1.1 // indirect
