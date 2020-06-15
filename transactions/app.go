@@ -39,11 +39,10 @@ func SendTransactionsFor(wallet sdkWallet.Wallet, walletWaitGroup *sync.WaitGrou
 	}
 	client.Initialize()
 
-	account, err := client.GetAccount(wallet.Address)
+	nonce, err := retrieveNonce(client, wallet)
 	if err != nil {
 		return err
 	}
-	nonce := int64(account.Nonce)
 
 	// Make a copy of the default gas params that can be mutated when processing the tx
 	gasParams := config.Configuration.Transactions.GasParams
@@ -83,4 +82,14 @@ func SendTransactionToReceiver(wallet sdkWallet.Wallet, receiver string, nonce i
 	fmt.Println(fmt.Sprintf("Success! Pending tx hash: %s", txHash))
 
 	return txHash, nil
+}
+
+func retrieveNonce(client api.Client, wallet sdkWallet.Wallet) (int64, error) {
+	account, err := client.GetAccount(wallet.Address)
+	if err != nil {
+		return -1, err
+	}
+	nonce := int64(account.Nonce)
+
+	return nonce, nil
 }

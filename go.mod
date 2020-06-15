@@ -3,8 +3,8 @@ module github.com/SebastianJ/elrond-stress
 go 1.14
 
 require (
-	github.com/ElrondNetwork/elrond-go v1.0.130 // indirect
-	github.com/SebastianJ/elrond-sdk v0.0.0-20200612125752-f8f7cd2a99c7
+	github.com/ElrondNetwork/elrond-go v1.0.131 // indirect
+	github.com/SebastianJ/elrond-sdk v0.0.0-20200615163955-c118c1e74005
 	github.com/allegro/bigcache v1.2.1 // indirect
 	github.com/aristanetworks/goarista v0.0.0-20191023202215-f096da5361bb // indirect
 	github.com/cespare/cp v1.1.1 // indirect
