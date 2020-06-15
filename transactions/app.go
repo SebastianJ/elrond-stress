@@ -76,6 +76,7 @@ func SendTransactionToReceiver(wallet sdkWallet.Wallet, receiver string, nonce i
 		client,
 	)
 	if err != nil {
+		fmt.Printf("Error occurred: %s\n", err.Error())
 		return "", err
 	}
 
